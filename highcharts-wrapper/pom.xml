@@ -11,13 +11,11 @@
     </description>
 
     <parent>
-        <groupId>com.googlecode.wicked-charts</groupId>
+        <groupId>net.energytools.wicked-charts</groupId>
         <artifactId>wicked-charts-parent</artifactId>
         <relativePath>..</relativePath>
-        <version>2.0.1</version>
+        <version>2.0.2</version>
     </parent>
-
-    <url>http://code.google.com/p/wicked-charts/</url>
 
     <licenses>
         <license>
@@ -28,8 +26,8 @@
     </licenses>
 
     <scm>
-        <url>scm:git:https://github.com/thombergs/wicked-charts.git</url>
-        <connection>scm:git:https://github.com/thombergs/wicked-charts.git</connection>
+        <url>scm:git:https://github.com/qfeixas/wicked-charts.git</url>
+        <connection>scm:git:https://github.com/qfeixas/wicked-charts.git</connection>
     </scm>
 
     <developers>
@@ -73,79 +71,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <pluginManagement>
-            <plugins>
-                <!--This plugin's configuration is used to store Eclipse m2e settings
-                    only. It has no influence on the Maven build itself. -->
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>
-                                            org.apache.maven.plugins
-                                        </groupId>
-                                        <artifactId>
-                                            maven-resources-plugin
-                                        </artifactId>
-                                        <versionRange>
-                                            [2.5,)
-                                        </versionRange>
-                                        <goals>
-                                            <goal>resources</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore></ignore>
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <id>attach-javadocs</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <failOnError>false</failOnError>
-                        <additionalparam>-Xdoclint:none</additionalparam>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>com.mycila.maven-license-plugin</groupId>
-                    <artifactId>maven-license-plugin</artifactId>
-                    <configuration>
-                        <header>src/main/resources/NOTICE</header>
-                        <includes>
-                            <include>src/main/java/**/*.java</include>
-                        </includes>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
     </build>
 
     <dependencies>
