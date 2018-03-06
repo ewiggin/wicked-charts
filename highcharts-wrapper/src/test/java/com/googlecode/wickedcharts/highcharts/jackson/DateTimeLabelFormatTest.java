@@ -16,15 +16,16 @@ package com.googlecode.wickedcharts.highcharts.jackson;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Ignore;
 
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.DateTimeLabelFormat;
 import com.googlecode.wickedcharts.highcharts.options.DateTimeLabelFormat.DateTimeProperties;
 
 /**
- * 
+ *
  * @author Matthias Balke (matthias.balke@gmail.com)
- * 
+ *
  */
 public class DateTimeLabelFormatTest {
 
@@ -39,10 +40,11 @@ public class DateTimeLabelFormatTest {
 		String json = renderer.toJson(dateTimeLabelFormat);
 
 		// then
-		Assert.assertEquals("{ second: '%e. %b' }", json);
+		Assert.assertEquals("{ \"second\": \"%e. %b\" }", json);
 	}
 
-//	@Test
+	@Ignore("order of keys is not predictable in JSON")
+	@Test
 	public void testMoreProperties() {
 		// given
 		DateTimeLabelFormat dateTimeLabelFormat = new DateTimeLabelFormat();
@@ -61,8 +63,9 @@ public class DateTimeLabelFormatTest {
 
 		// then
 		Assert.assertEquals(
-				"{ week: '%e. %b', hour: '%H:%M', minute: '%H:%M', year: '%Y', month: '%b \'%y', day: '%e. %b', second: '%H:%M:%S' }",
-				json);
+				"{ \"second\": \"%H:%M:%S\", \"minute\": \"%H:%M\", \"hour\": \"%H:%M\", "+
+				"\"day\": \"%e. %b\", \"week\": \"%e. %b\", \"month\": \"%b '%y\", " +
+				"\"year\": \"%Y\" }", json);
 
 	}
 
