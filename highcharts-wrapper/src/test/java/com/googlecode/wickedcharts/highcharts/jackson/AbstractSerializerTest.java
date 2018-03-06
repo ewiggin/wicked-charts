@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 public class AbstractSerializerTest {
 

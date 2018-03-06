@@ -1,7 +1,7 @@
 package com.googlecode.wickedcharts.highcharts.jackson;
 
 import com.googlecode.wickedcharts.highcharts.options.SeriesType;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Locale;

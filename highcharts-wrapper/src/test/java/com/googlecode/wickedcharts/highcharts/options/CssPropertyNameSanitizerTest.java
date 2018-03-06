@@ -1,6 +1,6 @@
 package com.googlecode.wickedcharts.highcharts.options;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Test;
 
