@@ -23,7 +23,7 @@ import java.util.ArrayList;
  */
 public class DataGrouping implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 7994230131347680735L;
 
     /**
      * The method of approximation inside a group.
