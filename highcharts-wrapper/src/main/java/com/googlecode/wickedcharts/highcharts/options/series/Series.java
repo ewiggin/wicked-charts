@@ -83,6 +83,8 @@ public abstract class Series<D> implements Serializable {
 
 	private Integer wickedChartsId;
 
+	private DataGrouping dataGrouping;
+
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
 	 */
@@ -325,4 +327,12 @@ public abstract class Series<D> implements Serializable {
 		return enableMouseTracking;
 	}
 
+	public DataGrouping getDataGrouping() {
+		return dataGrouping;
+	}
+
+	public Series<D> setDataGrouping(DataGrouping dataGrouping) {
+		this.dataGrouping = dataGrouping;
+		return this;
+	}
 }
