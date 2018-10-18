@@ -53,6 +53,8 @@ public abstract class Series<D> implements Serializable {
 
 	private Integer yAxis;
 
+	private String yAxisId;
+
 	private Marker marker;
 
 	private PixelOrPercent size;
@@ -84,6 +86,8 @@ public abstract class Series<D> implements Serializable {
 	private Integer wickedChartsId;
 
 	private DataGrouping dataGrouping;
+
+	private String id;
 
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
@@ -181,7 +185,12 @@ public abstract class Series<D> implements Serializable {
 		return this.xAxis;
 	}
 
-	public Integer getyAxis() {
+	public Object getyAxis() {
+
+		if (this.yAxisId != null && !this.yAxisId.isEmpty()) {
+			return this.yAxisId;
+		}
+
 		return this.yAxis;
 	}
 
@@ -291,6 +300,11 @@ public abstract class Series<D> implements Serializable {
 		return this;
 	}
 
+	public Series<D> setyAxis(String yAxisId) {
+		this.yAxisId = yAxisId;
+		return this;
+	}
+
 	public Series<D> setTooltip(Tooltip tooltip) {
 		this.tooltip = tooltip;
 		return this;
@@ -333,6 +347,15 @@ public abstract class Series<D> implements Serializable {
 
 	public Series<D> setDataGrouping(DataGrouping dataGrouping) {
 		this.dataGrouping = dataGrouping;
+		return this;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public Series<D> setId(String id) {
+		this.id = id;
 		return this;
 	}
 }
