@@ -33,7 +33,7 @@ public class HighchartsColorReferenceSerializerTest {
     String json = renderer.toJson(color);
 
     // then
-    Assert.assertEquals("Highcharts.getOptions().colors[" + 3 + "]", json);
+    Assert.assertEquals("\"Highcharts.getOptions().colors[" + 3 + "]\"", json);
   }
 
   @Test
@@ -47,8 +47,8 @@ public class HighchartsColorReferenceSerializerTest {
     String json = renderer.toJson(color);
 
     // then
-    Assert.assertEquals("Highcharts.Color(Highcharts.getOptions().colors[" + 3
-        + "]).brighten(0.20).get()", json);
+    Assert.assertEquals("Highcharts.Color(\"Highcharts.getOptions().colors[" + 3
+        + "]\").brighten(0.20).get()", json);
   }
 
 }
