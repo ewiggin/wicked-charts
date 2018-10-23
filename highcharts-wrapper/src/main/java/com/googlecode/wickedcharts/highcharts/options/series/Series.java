@@ -89,6 +89,8 @@ public abstract class Series<D> implements Serializable {
 
 	private String id;
 
+	private Boolean showInNavigator;
+
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
 	 */
@@ -357,5 +359,13 @@ public abstract class Series<D> implements Serializable {
 	public Series<D> setId(String id) {
 		this.id = id;
 		return this;
+	}
+
+	public Boolean getShowInNavigator() {
+		return showInNavigator;
+	}
+
+	public void setShowInNavigator(Boolean showInNavigator) {
+		this.showInNavigator = showInNavigator;
 	}
 }

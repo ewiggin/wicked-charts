@@ -80,6 +80,10 @@ public class Options implements Serializable {
 
     private Navigation navigation;
 
+    private Navigator navigator;
+
+    private RangeSelector rangeSelector;
+
     public Options() {
 
     }
@@ -437,4 +441,21 @@ public class Options implements Serializable {
         return this;
     }
 
+    public Navigator getNavigator() {
+        return navigator;
+    }
+
+    public Options setNavigator(Navigator navigator) {
+        this.navigator = navigator;
+        return this;
+    }
+
+    public RangeSelector getRangeSelector() {
+        return rangeSelector;
+    }
+
+    public Options setRangeSelector(RangeSelector rangeSelector) {
+        this.rangeSelector = rangeSelector;
+        return this;
+    }
 }

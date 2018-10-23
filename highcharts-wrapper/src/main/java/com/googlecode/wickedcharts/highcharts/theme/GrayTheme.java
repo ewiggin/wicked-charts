@@ -14,23 +14,7 @@
  */
 package com.googlecode.wickedcharts.highcharts.theme;
 
-import com.googlecode.wickedcharts.highcharts.options.Axis;
-import com.googlecode.wickedcharts.highcharts.options.ButtonOptions;
-import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
-import com.googlecode.wickedcharts.highcharts.options.CssStyle;
-import com.googlecode.wickedcharts.highcharts.options.DataLabels;
-import com.googlecode.wickedcharts.highcharts.options.DummyOption;
-import com.googlecode.wickedcharts.highcharts.options.ExportingButtons;
-import com.googlecode.wickedcharts.highcharts.options.ExportingOptions;
-import com.googlecode.wickedcharts.highcharts.options.Labels;
-import com.googlecode.wickedcharts.highcharts.options.Legend;
-import com.googlecode.wickedcharts.highcharts.options.Marker;
-import com.googlecode.wickedcharts.highcharts.options.MinorTickInterval;
-import com.googlecode.wickedcharts.highcharts.options.Navigation;
-import com.googlecode.wickedcharts.highcharts.options.PlotOptions;
-import com.googlecode.wickedcharts.highcharts.options.PlotOptionsChoice;
-import com.googlecode.wickedcharts.highcharts.options.Title;
-import com.googlecode.wickedcharts.highcharts.options.Tooltip;
+import com.googlecode.wickedcharts.highcharts.options.*;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.color.LinearGradient;
 import com.googlecode.wickedcharts.highcharts.options.color.NullColor;
@@ -117,9 +101,9 @@ public class GrayTheme extends Theme {
         new ButtonOptions().setSymbolFill(HexColor.fromString("#55be3b"))).setPrintButton(
         new ButtonOptions().setSymbolFill(HexColor.fromString("#7797be")))));
 
-    this.setRangeSelector(new DummyOption());
+    this.setRangeSelector(new RangeSelector());
 
-    this.setNavigator(new DummyOption());
+    this.setNavigator(new Navigator());
 
     this.setScrollbar(new DummyOption());
 
