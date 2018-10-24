@@ -46,6 +46,10 @@ public class ExportingOptions implements Serializable {
 
 	private ExportingButtons buttons;
 
+	private ExportingCsv csv;
+
+	private Number printMaxWidth;
+
 	public ExportingButtons getButtons() {
 		return this.buttons;
 	}
@@ -109,4 +113,21 @@ public class ExportingOptions implements Serializable {
 		return this;
 	}
 
+	public ExportingCsv getCsv() {
+		return csv;
+	}
+
+	public ExportingOptions setCsv(ExportingCsv csv) {
+		this.csv = csv;
+		return this;
+	}
+
+	public Number getPrintMaxWidth() {
+		return printMaxWidth;
+	}
+
+	public ExportingOptions setPrintMaxWidth(Number printMaxWidth) {
+		this.printMaxWidth = printMaxWidth;
+		return this;
+	}
 }
