@@ -138,6 +138,8 @@ public class Axis implements Serializable {
 
     private Integer wickedChartsId;
 
+    private Boolean visible;
+
     public Axis() {
 
     }
@@ -662,4 +664,12 @@ public class Axis implements Serializable {
         this.tickPositions = tickPositions;
     }
 
+    public Boolean getVisible() {
+        return visible;
+    }
+
+    public Axis setVisible(Boolean visible) {
+        this.visible = visible;
+        return this;
+    }
 }
