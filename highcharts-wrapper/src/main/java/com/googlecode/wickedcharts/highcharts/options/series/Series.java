@@ -91,6 +91,10 @@ public abstract class Series<D> implements Serializable {
 
 	private Boolean showInNavigator;
 
+	private Boolean visible;
+
+	private Long dateDifference;
+
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
 	 */
@@ -367,5 +371,21 @@ public abstract class Series<D> implements Serializable {
 
 	public void setShowInNavigator(Boolean showInNavigator) {
 		this.showInNavigator = showInNavigator;
+	}
+
+	public Boolean getVisible() {
+		return visible;
+	}
+
+	public void setVisible(Boolean visible) {
+		this.visible = visible;
+	}
+
+	public Long getDateDifference() {
+		return dateDifference;
+	}
+
+	public void setDateDifference(Long dateDifference) {
+		this.dateDifference = dateDifference;
 	}
 }
