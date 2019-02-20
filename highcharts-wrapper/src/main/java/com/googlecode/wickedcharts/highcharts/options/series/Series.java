@@ -20,8 +20,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
 
 import java.awt.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 import java.util.List;
 
 /**
@@ -93,7 +92,7 @@ public abstract class Series<D> implements Serializable {
 
 	private Boolean visible;
 
-	private Long dateDifference;
+	private Map<String, Object> customProperties;
 
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
@@ -377,15 +376,32 @@ public abstract class Series<D> implements Serializable {
 		return visible;
 	}
 
-	public void setVisible(Boolean visible) {
+	public Series setVisible(Boolean visible) {
 		this.visible = visible;
+		return this;
 	}
 
-	public Long getDateDifference() {
-		return dateDifference;
+	public Map<String, Object> getCustomProperties() {
+		return customProperties;
 	}
 
-	public void setDateDifference(Long dateDifference) {
-		this.dateDifference = dateDifference;
+	public Series setCustomProperties(Map<String, Object> customProperties) {
+		this.customProperties = customProperties;
+		return this;
+	}
+
+	public Object getCustomProperty(String key) {
+		if (this.customProperties == null) {
+			return null;
+		}
+		return customProperties.get(key);
+	}
+
+	public Series setCustomProperty(String key, Object value) {
+		if (this.customProperties == null) {
+			this.customProperties = new HashMap<String, Object>();
+		}
+		this.customProperties.put(key, value);
+		return this;
 	}
 }
