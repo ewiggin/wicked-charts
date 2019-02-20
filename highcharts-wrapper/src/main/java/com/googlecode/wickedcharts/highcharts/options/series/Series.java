@@ -92,7 +92,7 @@ public abstract class Series<D> implements Serializable {
 
 	private Boolean visible;
 
-	private Map<String, Object> customProperties;
+	private Map<String, Object> customProperties = new HashMap<String, Object>();
 
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
@@ -391,16 +391,10 @@ public abstract class Series<D> implements Serializable {
 	}
 
 	public Object getCustomProperty(String key) {
-		if (this.customProperties == null) {
-			return null;
-		}
 		return customProperties.get(key);
 	}
 
-	public Series setCustomProperty(String key, Object value) {
-		if (this.customProperties == null) {
-			this.customProperties = new HashMap<String, Object>();
-		}
+	public Series addCustomProperty(String key, Object value) {
 		this.customProperties.put(key, value);
 		return this;
 	}
