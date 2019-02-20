@@ -14,11 +14,9 @@
  */
 package com.googlecode.wickedcharts.highcharts.jackson;
 
-import org.junit.Test;
-
-import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
 import com.googlecode.wickedcharts.highcharts.options.series.CustomCoordinatesSeries;
+import org.junit.Test;
 
 /**
  * 
@@ -52,6 +50,6 @@ public class CustomCoordinatesSeriesTest extends AbstractSerializerTest {
 
     // then
     assertIgnoreWhitespaces("{\n  \"data\" : [ [" + dateString1 + ", 0.0], ["
-        + dateString2 + ", 1.6] ]\n}", json);
+        + dateString2 + ", 1.6] ], \"customProperties\":{}\n}", json);
   }
 }
