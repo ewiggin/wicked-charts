@@ -92,6 +92,8 @@ public class Axis implements Serializable {
 
     private Integer offset;
 
+    private Boolean ordinal;
+
     private Boolean opposite;
 
     private List<PlotBand> plotBands;
@@ -258,6 +260,10 @@ public class Axis implements Serializable {
 
     public Integer getOffset() {
         return this.offset;
+    }
+
+    public Boolean getOrdinal() {
+        return this.ordinal;
     }
 
     public Boolean getOpposite() {
@@ -507,6 +513,11 @@ public class Axis implements Serializable {
 
     public Axis setOffset(final Integer offset) {
         this.offset = offset;
+        return this;
+    }
+
+    public Axis setOrdinal(final Boolean ordinal) {
+        this.ordinal = ordinal;
         return this;
     }
 
