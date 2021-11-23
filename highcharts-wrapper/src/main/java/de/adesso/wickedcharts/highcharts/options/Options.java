@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.heatmap.ColorAxis;
 import de.adesso.wickedcharts.highcharts.options.series.Series;
+import de.adesso.wickedcharts.highcharts.theme.RangeSelector;
 
 import java.io.Serializable;
 import java.util.*;
@@ -78,6 +79,11 @@ public class Options implements Serializable {
     private Loading loading;
 
     private Navigation navigation;
+
+    // https://api.highcharts.com/highstock/navigator
+    private Navigator navigator;
+
+    private RangeSelector rangeSelector;
 
     public Options() {
 
@@ -436,4 +442,21 @@ public class Options implements Serializable {
         return this;
     }
 
+    public Navigator getNavigator() {
+        return navigator;
+    }
+
+    public Options setNavigator(Navigator navigator) {
+        this.navigator = navigator;
+        return this;
+    }
+
+    public RangeSelector getRangeSelector() {
+        return rangeSelector;
+    }
+
+    public Options setRangeSelector(RangeSelector rangeSelector) {
+        this.rangeSelector = rangeSelector;
+        return this;
+    }
 }

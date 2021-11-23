@@ -24,7 +24,7 @@ import java.util.Locale;
 
 public class HighchartsColorReferenceSerializer extends ColorReferenceSerializer<HighchartsColor> {
 
-	private static final String HIGHCHARTS_COLOR = "Highcharts.getOptions().colors[%d]";
+	private static final String HIGHCHARTS_COLOR = "\"Highcharts.getOptions().colors[%d]\"";
 
 	@Override
 	protected void serializeIfNotNull(final HighchartsColor color, final JsonGenerator jgen,

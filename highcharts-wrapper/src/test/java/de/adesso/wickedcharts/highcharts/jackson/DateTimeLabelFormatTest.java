@@ -20,10 +20,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.Ignore;
+
 /**
- * 
+ *
  * @author Matthias Balke (matthias.balke@gmail.com)
- * 
+ *
  */
 public class DateTimeLabelFormatTest {
 
@@ -41,7 +43,8 @@ public class DateTimeLabelFormatTest {
 		assertEquals("{\"second\": \"%e. %b\" }", json);
 	}
 
-//	@Test
+	@Ignore("order of keys is not predictable in JSON")
+	@Test
 	public void testMoreProperties() {
 		// given
 		DateTimeLabelFormat dateTimeLabelFormat = new DateTimeLabelFormat();

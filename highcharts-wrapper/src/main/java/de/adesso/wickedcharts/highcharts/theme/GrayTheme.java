@@ -101,9 +101,9 @@ public class GrayTheme extends Theme {
         new ButtonOptions().setSymbolFill(HexColor.fromString("#55be3b"))).setPrintButton(
         new ButtonOptions().setSymbolFill(HexColor.fromString("#7797be")))));
 
-    this.setRangeSelector(new DummyOption());
+    this.setRangeSelector(new RangeSelector());
 
-    this.setNavigator(new DummyOption());
+    this.setNavigator(new Navigator());
 
     this.setScrollbar(new DummyOption());
 

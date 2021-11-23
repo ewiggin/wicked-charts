@@ -20,8 +20,7 @@ import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 
 import java.awt.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 import java.util.List;
 
 /**
@@ -53,6 +52,8 @@ public abstract class Series<D> implements Serializable {
 
 	private Integer yAxis;
 
+	private String yAxisId;
+
 	private Marker marker;
 
 	private PixelOrPercent size;
@@ -82,6 +83,16 @@ public abstract class Series<D> implements Serializable {
 	private Boolean enableMouseTracking;
 
 	private Integer wickedChartsId;
+
+	//private DataGrouping dataGrouping;
+
+	private String id;
+
+	private Boolean showInNavigator;
+
+	private Boolean visible;
+
+	private Map<String, Object> customProperties = new HashMap<String, Object>();
 
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
@@ -185,7 +196,12 @@ public abstract class Series<D> implements Serializable {
 		return this.xAxis;
 	}
 
-	public Integer getyAxis() {
+	public Object getyAxis() {
+
+		if (this.yAxisId != null && !this.yAxisId.isEmpty()) {
+			return this.yAxisId;
+		}
+
 		return this.yAxis;
 	}
 
@@ -296,6 +312,11 @@ public abstract class Series<D> implements Serializable {
 		return this;
 	}
 
+	public Series<D> setyAxis(String yAxisId) {
+		this.yAxisId = yAxisId;
+		return this;
+	}
+
 	public Series<D> setTooltip(Tooltip tooltip) {
 		this.tooltip = tooltip;
 		return this;
@@ -332,4 +353,56 @@ public abstract class Series<D> implements Serializable {
 		return enableMouseTracking;
 	}
 
+	/* public DataGrouping getDataGrouping() {
+		return dataGrouping;
+	}
+
+	public Series<D> setDataGrouping(DataGrouping dataGrouping) {
+		this.dataGrouping = dataGrouping;
+		return this;
+	} */
+
+	public String getId() {
+		return id;
+	}
+
+	public Series<D> setId(String id) {
+		this.id = id;
+		return this;
+	}
+
+	public Boolean getShowInNavigator() {
+		return showInNavigator;
+	}
+
+	public void setShowInNavigator(Boolean showInNavigator) {
+		this.showInNavigator = showInNavigator;
+	}
+
+	public Boolean getVisible() {
+		return visible;
+	}
+
+	public Series setVisible(Boolean visible) {
+		this.visible = visible;
+		return this;
+	}
+
+	public Map<String, Object> getCustomProperties() {
+		return customProperties;
+	}
+
+	public Series setCustomProperties(Map<String, Object> customProperties) {
+		this.customProperties = customProperties;
+		return this;
+	}
+
+	public Object getCustomProperty(String key) {
+		return customProperties.get(key);
+	}
+
+	public Series addCustomProperty(String key, Object value) {
+		this.customProperties.put(key, value);
+		return this;
+	}
 }

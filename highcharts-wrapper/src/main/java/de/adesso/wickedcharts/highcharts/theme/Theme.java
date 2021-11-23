@@ -42,10 +42,6 @@ public class Theme extends Options {
 
 	private DummyOption toolbar;
 
-	private DummyOption rangeSelector;
-
-	private DummyOption navigator;
-
 	private DummyOption scrollbar;
 
 	private LanguageOptions lang;
@@ -68,14 +64,6 @@ public class Theme extends Options {
 
 	public ColorReference getMaskColor() {
 		return this.maskColor;
-	}
-
-	public DummyOption getNavigator() {
-		return this.navigator;
-	}
-
-	public DummyOption getRangeSelector() {
-		return this.rangeSelector;
 	}
 
 	public DummyOption getScrollbar() {
@@ -112,16 +100,6 @@ public class Theme extends Options {
 
 	public Theme setMaskColor(final ColorReference maskColor) {
 		this.maskColor = maskColor;
-		return this;
-	}
-
-	public Theme setNavigator(final DummyOption navigator) {
-		this.navigator = navigator;
-		return this;
-	}
-
-	public Theme setRangeSelector(final DummyOption rangeSelector) {
-		this.rangeSelector = rangeSelector;
 		return this;
 	}
 

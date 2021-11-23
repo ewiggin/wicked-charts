@@ -31,12 +31,12 @@ class CustomCoordinatesSeriesTest extends AbstractSerializerTest {
     String dateString1 = "Date.UTC(1970, 9, 27)";
     String dateString2 = "Date.UTC(1971, 1, 12)";
 
-    Coordinate<String, Float> coordinate1 = new Coordinate<>(
+    Coordinate<String, Float> coordinate1 = new Coordinate<String, Float>(
         dateString1, 0f);
-    Coordinate<String, Float> coordinate2 = new Coordinate<>(
+    Coordinate<String, Float> coordinate2 = new Coordinate<String, Float>(
         dateString2, 1.6f);
 
-    CustomCoordinatesSeries<String, Float> series = new CustomCoordinatesSeries<>();
+    CustomCoordinatesSeries<String, Float> series = new CustomCoordinatesSeries<String, Float>();
     series
         .addPoint(coordinate1);
     series
@@ -50,6 +50,6 @@ class CustomCoordinatesSeriesTest extends AbstractSerializerTest {
 
     // then
     assertIgnoreWhitespaces("{\n  \"data\" : [ [" + dateString1 + ", 0.0], ["
-        + dateString2 + ", 1.6] ]\n}", json);
+        + dateString2 + ", 1.6] ], \"customProperties\":{}\n}", json);
   }
 }

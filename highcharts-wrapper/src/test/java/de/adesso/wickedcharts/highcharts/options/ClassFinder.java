@@ -75,8 +75,10 @@ class ClassFinder {
 
 	private static Set<Class<?>> getFromJARFile(final String jar, final String packageName) throws
 			IOException, ClassNotFoundException {
-		Set<Class<?>> classes = new HashSet<>();
-		try (JarInputStream jarFile = new JarInputStream(new FileInputStream(jar))) {
+				Set<Class<?>> classes = new HashSet<Class<?>>();
+				FileInputStream fileInputStream = new FileInputStream(jar);
+				JarInputStream jarFile = new JarInputStream(fileInputStream);
+		try {
 			JarEntry jarEntry;
 			do {
 				jarEntry = jarFile.getNextJarEntry();
@@ -90,7 +92,10 @@ class ClassFinder {
 					}
 				}
 			} while (jarEntry != null);
+		} finally {
+			// nothing
 		}
+
 		return classes;
 	}
 

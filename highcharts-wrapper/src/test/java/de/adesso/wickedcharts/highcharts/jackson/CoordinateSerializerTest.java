@@ -28,7 +28,7 @@ class CoordinateSerializerTest {
     void testStringFloatCoordinate() {
         // given
         String dateString = "Date.UTC(1970, 9, 27)";
-        Coordinate<String, Float> coordinateStringFloat = new Coordinate<>(
+        Coordinate<String, Float> coordinateStringFloat = new Coordinate<String, Float>(
                 dateString, 0f);
         JsonRenderer renderer = new JsonRenderer();
 
@@ -43,7 +43,7 @@ class CoordinateSerializerTest {
     void testLiteralStringFloatCoordinate() {
         // given
         String anyString = "foo";
-        Coordinate<String, Float> coordinateStringFloat = new Coordinate<>(
+        Coordinate<String, Float> coordinateStringFloat = new Coordinate<String, Float>(
                 anyString, 0f);
         coordinateStringFloat.setXQuoted(Boolean.TRUE);
         coordinateStringFloat.setYQuoted(Boolean.TRUE);

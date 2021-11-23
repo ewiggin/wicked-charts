@@ -1,3 +1,27 @@
+package de.adesso.wickedcharts.highcharts.theme;
+
+import de.adesso.wickedcharts.highcharts.options.Axis;
+import de.adesso.wickedcharts.highcharts.options.ButtonOptions;
+import de.adesso.wickedcharts.highcharts.options.ChartOptions;
+import de.adesso.wickedcharts.highcharts.options.CreditOptions;
+import de.adesso.wickedcharts.highcharts.options.CssStyle;
+import de.adesso.wickedcharts.highcharts.options.DataLabels;
+import de.adesso.wickedcharts.highcharts.options.DummyOption;
+import de.adesso.wickedcharts.highcharts.options.ExportingButtons;
+import de.adesso.wickedcharts.highcharts.options.ExportingOptions;
+import de.adesso.wickedcharts.highcharts.options.Labels;
+import de.adesso.wickedcharts.highcharts.options.Legend;
+import de.adesso.wickedcharts.highcharts.options.Marker;
+import de.adesso.wickedcharts.highcharts.options.Navigation;
+import de.adesso.wickedcharts.highcharts.options.Navigator;
+import de.adesso.wickedcharts.highcharts.options.PlotOptions;
+import de.adesso.wickedcharts.highcharts.options.PlotOptionsChoice;
+import de.adesso.wickedcharts.highcharts.options.Title;
+import de.adesso.wickedcharts.highcharts.options.Tooltip;
+import de.adesso.wickedcharts.highcharts.options.color.HexColor;
+import de.adesso.wickedcharts.highcharts.options.color.LinearGradient;
+import de.adesso.wickedcharts.highcharts.options.color.RgbaColor;
+
 /**
  *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
@@ -12,12 +36,6 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package de.adesso.wickedcharts.highcharts.theme;
-
-import de.adesso.wickedcharts.highcharts.options.*;
-import de.adesso.wickedcharts.highcharts.options.color.HexColor;
-import de.adesso.wickedcharts.highcharts.options.color.LinearGradient;
-import de.adesso.wickedcharts.highcharts.options.color.RgbaColor;
 
 // CHECKSTYLE:OFF
 public class DarkBlueTheme extends Theme {
@@ -97,9 +115,9 @@ public class DarkBlueTheme extends Theme {
         new ButtonOptions().setSymbolFill(new HexColor("#55be3b"))).setPrintButton(
         new ButtonOptions().setSymbolFill(new HexColor("#7797be")))));
 
-    this.setRangeSelector(new DummyOption());
+    this.setRangeSelector(new RangeSelector());
 
-    this.setNavigator(new DummyOption());
+    this.setNavigator(new Navigator());
 
     this.setScrollbar(new DummyOption());
 

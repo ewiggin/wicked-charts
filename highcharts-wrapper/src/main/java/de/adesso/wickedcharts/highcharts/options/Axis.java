@@ -92,6 +92,8 @@ public class Axis implements Serializable {
 
     private Integer offset;
 
+    private Boolean ordinal;
+
     private Boolean opposite;
 
     private List<PlotBand> plotBands;
@@ -137,6 +139,8 @@ public class Axis implements Serializable {
     private GridlineInterpolation gridLineInterpolation;
 
     private Integer wickedChartsId;
+
+    private Boolean visible;
 
     public Axis() {
 
@@ -256,6 +260,10 @@ public class Axis implements Serializable {
 
     public Integer getOffset() {
         return this.offset;
+    }
+
+    public Boolean getOrdinal() {
+        return this.ordinal;
     }
 
     public Boolean getOpposite() {
@@ -508,6 +516,11 @@ public class Axis implements Serializable {
         return this;
     }
 
+    public Axis setOrdinal(final Boolean ordinal) {
+        this.ordinal = ordinal;
+        return this;
+    }
+
     public Axis setOpposite(final Boolean opposite) {
         this.opposite = opposite;
         return this;
@@ -662,4 +675,12 @@ public class Axis implements Serializable {
         this.tickPositions = tickPositions;
     }
 
+    public Boolean getVisible() {
+        return visible;
+    }
+
+    public Axis setVisible(Boolean visible) {
+        this.visible = visible;
+        return this;
+    }
 }
