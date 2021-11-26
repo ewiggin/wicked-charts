@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.heatmap.ColorAxis;
 import de.adesso.wickedcharts.highcharts.options.series.Series;
-import de.adesso.wickedcharts.highcharts.theme.RangeSelector;
 
 import java.io.Serializable;
 import java.util.*;

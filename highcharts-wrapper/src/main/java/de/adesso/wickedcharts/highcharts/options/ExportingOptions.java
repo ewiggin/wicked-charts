@@ -52,4 +52,6 @@ public class ExportingOptions implements Serializable {
 	private ExportingButtons buttons;
 
 	private CsvOptions csv;
+
+	private Integer printMaxWidth;
 }

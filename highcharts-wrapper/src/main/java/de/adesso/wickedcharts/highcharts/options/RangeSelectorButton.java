@@ -1,4 +1,4 @@
-package com.googlecode.wickedcharts.highcharts.options;
+package de.adesso.wickedcharts.highcharts.options;
 
 import java.io.Serializable;
 

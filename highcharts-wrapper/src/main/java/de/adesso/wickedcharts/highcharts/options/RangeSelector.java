@@ -1,11 +1,11 @@
-package com.googlecode.wickedcharts.highcharts.options;
+package de.adesso.wickedcharts.highcharts.options;
 
 import java.io.Serializable;
 import java.util.List;
 
 public class RangeSelector implements Serializable {
 
-    private static final long serialVersionUID = -859639873877114L;
+    private static final long serialVersionUID = 1L;
 
     private Boolean enabled;
     private Boolean inputEnabled;

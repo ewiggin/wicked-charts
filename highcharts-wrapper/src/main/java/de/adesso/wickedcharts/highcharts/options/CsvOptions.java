@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Accessors(chain = true)
 public class CsvOptions implements Serializable {
     private Function columnHeaderFormatter;
-    private String dateFormat;
+    private String dateFormat = "%Y-%m-%d %H:%M:%S";
     private String decimalPoint;
     private String itemDelimiter;
     private String lineDelimiter = ".";

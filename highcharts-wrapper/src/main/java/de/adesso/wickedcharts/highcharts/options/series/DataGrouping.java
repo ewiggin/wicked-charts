@@ -1,6 +1,6 @@
-package com.googlecode.wickedcharts.highcharts.options.series;
+package de.adesso.wickedcharts.highcharts.options.series;
 
-import com.googlecode.wickedcharts.highcharts.options.DateTimeLabelFormat;
+import de.adesso.wickedcharts.highcharts.options.DateTimeLabelFormat;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,11 +19,11 @@ import java.util.ArrayList;
  * This can be altered through a custom approximation callback function.
  *
  * @see <a href="https://api.highcharts.com/highstock/series.area.dataGrouping.approximation">series.area.dataGrouping</a>
- * @author Mario Martínez (https://github.com/ewiggin)
+ * @author Mario Martínez
  */
 public class DataGrouping implements Serializable {
 
-    private static final long serialVersionUID = 7994230131347680735L;
+    private static final long serialVersionUID = 1L;
 
     /**
      * The method of approximation inside a group.

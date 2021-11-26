@@ -5,7 +5,7 @@ import java.io.Serializable;
 // https://api.highcharts.com/highstock/navigator
 public class Navigator implements Serializable {
 
-    private static final long serialVersionUID = -1431057189677932887L;
+    private static final long serialVersionUID = 1L;
 
     private Boolean adaptToUpdatedData;
     private Boolean enabled;

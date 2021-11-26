@@ -84,7 +84,7 @@ public abstract class Series<D> implements Serializable {
 
 	private Integer wickedChartsId;
 
-	//private DataGrouping dataGrouping;
+	private DataGrouping dataGrouping;
 
 	private String id;
 
@@ -353,14 +353,14 @@ public abstract class Series<D> implements Serializable {
 		return enableMouseTracking;
 	}
 
-	/* public DataGrouping getDataGrouping() {
+	public DataGrouping getDataGrouping() {
 		return dataGrouping;
 	}
 
 	public Series<D> setDataGrouping(DataGrouping dataGrouping) {
 		this.dataGrouping = dataGrouping;
 		return this;
-	} */
+	}
 
 	public String getId() {
 		return id;
