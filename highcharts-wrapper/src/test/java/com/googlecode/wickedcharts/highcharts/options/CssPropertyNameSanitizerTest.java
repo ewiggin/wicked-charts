@@ -4,6 +4,8 @@ import org.junit.Assert;
 
 import org.junit.Test;
 
+import de.adesso.wickedcharts.highcharts.options.CssStyle;
+
 public class CssPropertyNameSanitizerTest {
 
   @Test
