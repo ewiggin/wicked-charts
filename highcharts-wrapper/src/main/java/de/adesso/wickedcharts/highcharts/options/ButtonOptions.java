@@ -14,13 +14,14 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 import de.adesso.wickedcharts.highcharts.options.theme.Theme;
 
 import java.awt.*;
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -189,21 +190,25 @@ public class ButtonOptions implements Serializable {
 		return this;
 	}
 
+	@JsonIgnore
 	public ButtonOptions setBackgroundColor(final Color color) {
 		this.backgroundColor = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public ButtonOptions setBackgroundColor(final ColorReference backgroundColor) {
 		this.backgroundColor = backgroundColor;
 		return this;
 	}
 
+	@JsonIgnore
 	public ButtonOptions setBorderColor(final Color color) {
 		this.borderColor = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public ButtonOptions setBorderColor(final ColorReference borderColor) {
 		this.borderColor = borderColor;
 		return this;
@@ -229,31 +234,37 @@ public class ButtonOptions implements Serializable {
 		return this;
 	}
 
+	@JsonIgnore
 	public ButtonOptions setHoverBorderColor(final Color color) {
 		this.hoverBorderColor = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public ButtonOptions setHoverBorderColor(final ColorReference hoverBorderColor) {
 		this.hoverBorderColor = hoverBorderColor;
 		return this;
 	}
 
+	@JsonIgnore
 	public ButtonOptions setHoverSymbolFill(final Color color) {
 		this.hoverSymbolFill = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public ButtonOptions setHoverSymbolFill(final ColorReference hoverSymbolFill) {
 		this.hoverSymbolFill = hoverSymbolFill;
 		return this;
 	}
 
+	@JsonIgnore
 	public ButtonOptions setHoverSymbolStroke(final Color color) {
 		this.hoverSymbolStroke = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public ButtonOptions setHoverSymbolStroke(final ColorReference hoverSymbolStroke) {
 		this.hoverSymbolStroke = hoverSymbolStroke;
 		return this;
@@ -269,11 +280,13 @@ public class ButtonOptions implements Serializable {
 		return this;
 	}
 
+	@JsonIgnore
 	public ButtonOptions setSymbolFill(final Color color) {
 		this.symbolFill = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public ButtonOptions setSymbolFill(final ColorReference symbolFill) {
 		this.symbolFill = symbolFill;
 		return this;
@@ -284,11 +297,13 @@ public class ButtonOptions implements Serializable {
 		return this;
 	}
 
+	@JsonIgnore
 	public ButtonOptions setSymbolStroke(final Color color) {
 		this.symbolStroke = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public ButtonOptions setSymbolStroke(final ColorReference symbolStroke) {
 		this.symbolStroke = symbolStroke;
 		return this;

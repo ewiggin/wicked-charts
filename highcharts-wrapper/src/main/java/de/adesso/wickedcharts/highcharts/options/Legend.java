@@ -14,6 +14,8 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 
@@ -194,21 +196,25 @@ public class Legend implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public Legend setBackgroundColor(final Color color) {
         this.backgroundColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public Legend setBackgroundColor(final ColorReference backgroundColor) {
         this.backgroundColor = backgroundColor;
         return this;
     }
 
+    @JsonIgnore
     public Legend setBorderColor(final Color color) {
         this.borderColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public Legend setBorderColor(final ColorReference borderColor) {
         this.borderColor = borderColor;
         return this;

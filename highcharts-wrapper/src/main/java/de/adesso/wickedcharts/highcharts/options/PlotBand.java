@@ -15,6 +15,7 @@
 package de.adesso.wickedcharts.highcharts.options;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 
@@ -76,11 +77,13 @@ public class PlotBand implements Serializable {
 		return this.zIndex;
 	}
 
+	@JsonIgnore
 	public PlotBand setColor(final Color color) {
 		this.color = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public PlotBand setColor(final ColorReference color) {
 		this.color = color;
 		return this;
