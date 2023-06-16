@@ -325,24 +325,9 @@ public abstract class Series<D> implements Serializable {
 		return this;
 	}
 
-	/*
-	 * Zero-based index of the Y-Axis this series should be connected to.
-	 */
-//	public Series<D> setyAxis(final Integer yAxis) {
-//		this.yAxis = yAxis;
-//		return this;
-//	}
-//
-//	public Series<D> setyAxis(String yAxisId) {
-//		this.yAxisId = yAxisId;
-//		return this;
-//	}
-
 	/**
 	 * Permet un parametre que podra ser <i>Integer</i> i s'assignarà a <i>yAxis</i> o
 	 * String i s'assignarà a <i>yAxisId</i>
-	 * @param yAxis
-	 * @return
 	 */
 	public Series<D> setyAxis(final Object yAxis) {
 		if (yAxis instanceof Integer yAxisInteger) {
