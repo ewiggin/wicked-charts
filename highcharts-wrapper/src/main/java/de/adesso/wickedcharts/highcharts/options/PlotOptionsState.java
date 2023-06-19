@@ -14,6 +14,8 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 
@@ -75,21 +77,25 @@ public class PlotOptionsState implements Serializable {
 		return this;
 	}
 
+	@JsonIgnore
 	public PlotOptionsState setFillColor(final Color color) {
 		this.fillColor = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public PlotOptionsState setFillColor(final ColorReference fillColor) {
 		this.fillColor = fillColor;
 		return this;
 	}
 
+	@JsonIgnore
 	public PlotOptionsState setLineColor(final Color color) {
 		this.lineColor = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public PlotOptionsState setLineColor(final ColorReference lineColor) {
 		this.lineColor = lineColor;
 		return this;

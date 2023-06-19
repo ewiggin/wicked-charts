@@ -14,6 +14,8 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 
@@ -351,21 +353,25 @@ public class Axis implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public Axis setAlternateGridColor(final Color color) {
         this.alternateGridColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public Axis setAlternateGridColor(final ColorReference alternateGridColor) {
         this.alternateGridColor = alternateGridColor;
         return this;
     }
 
+    @JsonProperty
     public Axis setCategories(final List<String> categories) {
         this.categories = categories;
         return this;
     }
 
+    @JsonIgnore
     public Axis setCategories(final String... categories) {
         this.categories = Arrays.asList(categories);
         return this;
@@ -386,11 +392,13 @@ public class Axis implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public Axis setGridLineColor(final Color color) {
         this.gridLineColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public Axis setGridLineColor(final ColorReference gridLineColor) {
         this.gridLineColor = gridLineColor;
         return this;
@@ -416,11 +424,13 @@ public class Axis implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public Axis setLineColor(final Color color) {
         this.lineColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public Axis setLineColor(final ColorReference lineColor) {
         this.lineColor = lineColor;
         return this;
@@ -456,11 +466,13 @@ public class Axis implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public Axis setMinorGridLineColor(final Color color) {
         this.minorGridLineColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public Axis setMinorGridLineColor(final ColorReference minorGridLineColor) {
         this.minorGridLineColor = minorGridLineColor;
         return this;
@@ -476,11 +488,13 @@ public class Axis implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public Axis setMinorTickColor(final Color color) {
         this.minorTickColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public Axis setMinorTickColor(final ColorReference minorTickColor) {
         this.minorTickColor = minorTickColor;
         return this;
@@ -575,11 +589,13 @@ public class Axis implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public Axis setTickColor(final Color color) {
         this.tickColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public Axis setTickColor(final ColorReference tickColor) {
         this.tickColor = tickColor;
         return this;

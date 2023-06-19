@@ -15,12 +15,15 @@
 package de.adesso.wickedcharts.highcharts.options;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.heatmap.ColorAxis;
 import de.adesso.wickedcharts.highcharts.options.series.Series;
 
 import java.io.Serializable;
 import java.util.*;
+
+import static java.util.Objects.isNull;
 
 /**
  * This is the main class for configuring a chart. The structure of this class
@@ -35,6 +38,7 @@ import java.util.*;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * @see <a href="http://api.highcharts.com/highcharts">http://api.highcharts.com/highcharts</a>
  */
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Options implements Serializable {
 
     @JsonIgnore
@@ -299,6 +303,10 @@ public class Options implements Serializable {
     }
 
     public void markForProcessing(final IProcessableOption option) {
+        if (isNull(option)) {
+            return;
+        }
+
         List<IProcessableOption> list = this.processingRegistry.get(option.getProcessingKey());
         if (list == null) {
             list = new ArrayList<IProcessableOption>();
@@ -317,11 +325,12 @@ public class Options implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public Options setColors(final ColorReference... colors) {
         this.colors = Arrays.asList(colors);
         return this;
     }
-
+    @JsonProperty
     public Options setColors(final List<ColorReference> colors) {
         this.colors = colors;
         return this;
@@ -406,12 +415,14 @@ public class Options implements Serializable {
      * @param xAxis the single xAxis of the chart
      * @return the {@link Options} object for chaining
      */
+    @JsonIgnore
     public Options setxAxis(final Axis xAxis) {
         this.xAxis = new ArrayList<Axis>();
         this.xAxis.add(xAxis);
         return this;
     }
 
+    @JsonProperty
     public Options setxAxis(final List<Axis> xAxis) {
         this.xAxis = xAxis;
         return this;
@@ -425,12 +436,14 @@ public class Options implements Serializable {
      * @param yAxis the single yAxis of the chart
      * @return the {@link Options} object for chaining
      */
+    @JsonIgnore
     public Options setyAxis(final Axis yAxis) {
         this.yAxis = new ArrayList<Axis>();
         this.yAxis.add(yAxis);
         return this;
     }
 
+    @JsonProperty
     public Options setyAxis(final List<Axis> yAxis) {
         this.yAxis = yAxis;
         return this;

@@ -14,7 +14,9 @@
  */
 package de.adesso.wickedcharts.highcharts.options.series;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.adesso.wickedcharts.highcharts.options.DataLabels;
 import de.adesso.wickedcharts.highcharts.options.Events;
 import de.adesso.wickedcharts.highcharts.options.Marker;
@@ -137,11 +139,13 @@ public class Point implements Serializable {
 		return this.y;
 	}
 
+	@JsonIgnore
 	public Point setColor(final Color color) {
 		this.color = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public Point setColor(final ColorReference color) {
 		this.color = color;
 		return this;

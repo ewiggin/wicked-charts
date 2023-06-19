@@ -14,6 +14,9 @@
  */
 package de.adesso.wickedcharts.highcharts.options.series;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -75,6 +78,7 @@ public class PointSeries extends Series<Point> {
 		return this;
 	}
 
+	@JsonProperty
 	public PointSeries setNumberData(final List<Number> data) {
 		for (Number number : data) {
 			addPoint(new Point(number));
@@ -82,6 +86,7 @@ public class PointSeries extends Series<Point> {
 		return this;
 	}
 
+	@JsonIgnore
 	public PointSeries setNumberData(final Number... data) {
 		for (Number number : data) {
 			addPoint(new Point(number));

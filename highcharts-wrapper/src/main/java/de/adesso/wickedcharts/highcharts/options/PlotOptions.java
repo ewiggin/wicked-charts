@@ -14,6 +14,8 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 
@@ -360,11 +362,13 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public PlotOptions setBorderColor(final Color color) {
         this.borderColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public PlotOptions setBorderColor(final ColorReference borderColor) {
         this.borderColor = borderColor;
         return this;
@@ -385,11 +389,13 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public PlotOptions setColor(final Color color) {
         this.color = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public PlotOptions setColor(final ColorReference color) {
         this.color = color;
         return this;
@@ -435,11 +441,13 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public PlotOptions setFillColor(final Color color) {
         this.fillColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public PlotOptions setFillColor(final ColorReference fillColor) {
         this.fillColor = fillColor;
         return this;
@@ -465,11 +473,13 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    @JsonIgnore
     public PlotOptions setLineColor(final Color color) {
         this.lineColor = new SimpleColor(color);
         return this;
     }
 
+    @JsonProperty
     public PlotOptions setLineColor(final ColorReference lineColor) {
         this.lineColor = lineColor;
         return this;

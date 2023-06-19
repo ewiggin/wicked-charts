@@ -14,14 +14,19 @@
  */
 package de.adesso.wickedcharts.highcharts.options.series;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
+import lombok.NoArgsConstructor;
 
 import java.awt.*;
 import java.io.Serializable;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 
 /**
  * Defines the configuration of the "series" option.
@@ -32,6 +37,18 @@ import java.util.List;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.MINIMAL_CLASS, property = "seriesType")
+@JsonSubTypes({
+		@JsonSubTypes.Type(value = BoxSeries.class, name = ".BoxSeries"),
+		@JsonSubTypes.Type(value = BubbleSeries.class, name = ".BubbleSeries"),
+		@JsonSubTypes.Type(value = CoordinatesSeries.class, name = ".CoordinatesSeries"),
+		@JsonSubTypes.Type(value = Custom3DCoordinateSeries.class, name = ".Custom3DCoordinateSeries"),
+		@JsonSubTypes.Type(value = CustomCoordinatesSeries.class, name = ".CustomCoordinatesSeries"),
+		@JsonSubTypes.Type(value = PointSeries.class, name = ".PointSeries"),
+		@JsonSubTypes.Type(value = RangeSeries.class, name = ".RangeSeries"),
+		@JsonSubTypes.Type(value = SimpleSeries.class, name = ".SimpleSeries"),
+})
+@NoArgsConstructor
 public abstract class Series<D> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -215,21 +232,25 @@ public abstract class Series<D> implements Serializable {
 		return this;
 	}
 
+	@JsonIgnore
 	public Series<D> setColor(final Color color) {
 		this.color = new SimpleColor(color);
 		return this;
 	}
 
+	@JsonProperty
 	public Series<D> setColor(final ColorReference color) {
 		this.color = color;
 		return this;
 	}
 
+	@JsonIgnore
 	public Series<D> setData(final D... data) {
 		this.data = Arrays.asList(data);
 		return this;
 	}
 
+	@JsonProperty
 	public Series<D> setData(final List<D> data) {
 		this.data = data;
 		return this;
@@ -304,16 +325,17 @@ public abstract class Series<D> implements Serializable {
 		return this;
 	}
 
-	/*
-	 * Zero-based index of the Y-Axis this series should be connected to.
+	/**
+	 * Permet un parametre que podra ser <i>Integer</i> i s'assignarà a <i>yAxis</i> o
+	 * String i s'assignarà a <i>yAxisId</i>
 	 */
-	public Series<D> setyAxis(final Integer yAxis) {
-		this.yAxis = yAxis;
-		return this;
-	}
+	public Series<D> setyAxis(final Object yAxis) {
+		if (yAxis instanceof Integer yAxisInteger) {
+			this.yAxis = yAxisInteger;
+		} else if (yAxis instanceof String yAxisString) {
+			this.yAxisId = yAxisString;
+		}
 
-	public Series<D> setyAxis(String yAxisId) {
-		this.yAxisId = yAxisId;
 		return this;
 	}
 
