@@ -146,6 +146,8 @@ public class PlotOptions implements Serializable {
 
     private PixelOrPercent maxSize;
 
+    private Boolean grouping;
+
     public PixelOrPercent getNeckWidth() {
         return neckWidth;
     }
@@ -341,6 +343,8 @@ public class PlotOptions implements Serializable {
     public Integer getzIndex() {
         return this.zIndex;
     }
+
+    public Boolean getGrouping() { return this.grouping; }
 
     public PlotOptions setNeckWidth(PixelOrPercent neckWidth) {
         this.neckWidth = neckWidth;
@@ -678,4 +682,8 @@ public class PlotOptions implements Serializable {
         return this;
     }
 
+    public PlotOptions setGrouping(Boolean grouping) {
+        this.grouping = grouping;
+        return this;
+    }
 }

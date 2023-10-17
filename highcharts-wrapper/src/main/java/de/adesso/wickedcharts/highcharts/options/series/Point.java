@@ -25,6 +25,10 @@ import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 
 import java.awt.*;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
+import static java.util.Objects.isNull;
 
 /**
  * A point in a chart that has a label (or a name) and a color.
@@ -62,6 +66,8 @@ public class Point implements Serializable {
 	private Number x;
 
 	private Integer wickedChartsId;
+
+	private Map<String, Object> customProperties = new HashMap<>();
 
 	public Point() {
 
@@ -139,6 +145,8 @@ public class Point implements Serializable {
 		return this.y;
 	}
 
+	public Map<String, Object> getCustomProperties() { return this.customProperties; }
+
 	@JsonIgnore
 	public Point setColor(final Color color) {
 		this.color = new SimpleColor(color);
@@ -196,6 +204,11 @@ public class Point implements Serializable {
 		return this;
 	}
 
+	public Point setCustomProperties(final Map<String, Object> customProperties) {
+		this.customProperties = customProperties;
+		return this;
+	}
+
 	public Point setSelected(Boolean selected) {
 		this.selected = selected;
 		return this;
@@ -225,4 +238,12 @@ public class Point implements Serializable {
 		return wickedChartsId;
 	}
 
+	public Point addCustomProperty(String key, Object value) {
+		if (isNull(customProperties)) {
+			customProperties = new HashMap<>();
+		}
+
+		customProperties.put(key, value);
+		return this;
+	}
 }

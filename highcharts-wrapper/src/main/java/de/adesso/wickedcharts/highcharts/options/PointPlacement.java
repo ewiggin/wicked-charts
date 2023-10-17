@@ -26,8 +26,9 @@ import de.adesso.wickedcharts.highcharts.json.LowercaseEnum;
  */
 public enum PointPlacement implements LowercaseEnum {
 
+	UNDEFINED,
 	ON,
-
-	BETWEEN;
+	BETWEEN,
+	NUMBER
 
 }
