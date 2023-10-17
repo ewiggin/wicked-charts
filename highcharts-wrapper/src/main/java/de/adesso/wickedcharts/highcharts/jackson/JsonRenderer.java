@@ -88,11 +88,13 @@ public class JsonRenderer {
         this.jacksonModule.addSerializer(RangeCoordinate.class, new RangeCoordinateSerializer());
         this.jacksonModule.addSerializer(Bubble.class, new BubbleSerializer());
         this.jacksonModule.addSerializer(ThreeDCoordinate.class, new ThreeDimensionalCoordinateSerializer());
+        this.jacksonModule.addSerializer(PointPlacementProperty.class, new PointPlacementPropertySerializer());
 
         this.jacksonModule.addDeserializer(ColorReference.class, new ColorReferenceDeserializer());
         this.jacksonModule.addDeserializer(CssStyle.class, new CssStyleDeserializer());
         this.jacksonModule.addDeserializer(SeriesType.class, new SeriesTypeEnumDeserializer());
         this.jacksonModule.addDeserializer(LegendLayout.class, new LegendLayoutEnumDeserializer());
+        this.jacksonModule.addDeserializer(PointPlacementProperty.class, new PointPlacementPropertyDeserializer());
 
         ObjectMapper mapper = createDefaultObjectMapper();
         mapper.setLocale(Locale.ENGLISH);

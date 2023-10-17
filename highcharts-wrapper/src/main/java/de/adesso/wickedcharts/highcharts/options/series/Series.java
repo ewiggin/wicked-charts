@@ -81,6 +81,10 @@ public abstract class Series<D> implements Serializable {
 
 	private ColorReference color;
 
+	private ColorReference borderColor;
+
+	private Integer borderWidth;
+
 	private Center center;
 
 	private PixelOrPercent innerSize;
@@ -89,7 +93,7 @@ public abstract class Series<D> implements Serializable {
 
 	private Number pointStart;
 
-	private PointPlacement pointPlacement;
+	private PointPlacementProperty pointPlacement;
 
 	private Tooltip tooltip;
 
@@ -109,7 +113,11 @@ public abstract class Series<D> implements Serializable {
 
 	private Boolean visible;
 
-	private Map<String, Object> customProperties = new HashMap<String, Object>();
+	private String linkedTo;
+
+	private Float groupPadding;
+
+	private Map<String, Object> customProperties = new HashMap<>();
 
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
@@ -157,6 +165,10 @@ public abstract class Series<D> implements Serializable {
 		return this.color;
 	}
 
+	public ColorReference getBorderColor() { return this.borderColor; }
+
+	public Integer getBorderWidth() { return this.borderWidth; }
+
 	public List<D> getData() {
 		return this.data;
 	}
@@ -185,7 +197,7 @@ public abstract class Series<D> implements Serializable {
 		return this.pointInterval;
 	}
 
-	public PointPlacement getPointPlacement() {
+	public PointPlacementProperty getPointPlacement() {
 		return this.pointPlacement;
 	}
 
@@ -222,6 +234,14 @@ public abstract class Series<D> implements Serializable {
 		return this.yAxis;
 	}
 
+	public String getLinkedTo() {
+		return this.linkedTo;
+	}
+
+	public Float getGroupPadding() {
+		return this.groupPadding;
+	}
+
     public Series<D> setPointPadding(final Float pointPadding) {
         this.pointPadding = pointPadding;
         return this;
@@ -241,6 +261,23 @@ public abstract class Series<D> implements Serializable {
 	@JsonProperty
 	public Series<D> setColor(final ColorReference color) {
 		this.color = color;
+		return this;
+	}
+
+	@JsonIgnore
+	public Series<D> setBorderColor(final Color borderColor) {
+		this.borderColor = new SimpleColor(borderColor);
+		return this;
+	}
+
+	@JsonProperty
+	public Series<D> setBorderColor(final ColorReference borderColor) {
+		this.borderColor = borderColor;
+		return this;
+	}
+
+	public Series<D> setBorderWidth(final Integer borderWidth) {
+		this.borderWidth = borderWidth;
 		return this;
 	}
 
@@ -286,8 +323,26 @@ public abstract class Series<D> implements Serializable {
 		return this;
 	}
 
-	public Series<D> setPointPlacement(final PointPlacement pointPlacement) {
+	@JsonProperty
+	public Series<D> setPointPlacement(final PointPlacementProperty pointPlacement) {
 		this.pointPlacement = pointPlacement;
+		return this;
+	}
+
+	@JsonIgnore
+	public Series<D> setPointPlacement(final PointPlacement pointPlacement) {
+		PointPlacementProperty property = new PointPlacementProperty();
+		property.setPlacement(pointPlacement);
+		this.pointPlacement = property;
+		return this;
+	}
+
+	@JsonIgnore
+	public Series<D> setPointPlacement(final Float pointPlacement) {
+		PointPlacementProperty property = new PointPlacementProperty();
+		property.setPlacement(PointPlacement.NUMBER);
+		property.setPosition(pointPlacement);
+		this.pointPlacement = property;
 		return this;
 	}
 
@@ -425,6 +480,16 @@ public abstract class Series<D> implements Serializable {
 
 	public Series addCustomProperty(String key, Object value) {
 		this.customProperties.put(key, value);
+		return this;
+	}
+
+	public Series<D> setLinkedTo(String linkedTo) {
+		this.linkedTo = linkedTo;
+		return this;
+	}
+
+	public Series<D> setGroupPadding(Float groupPadding) {
+		this.groupPadding = groupPadding;
 		return this;
 	}
 }
