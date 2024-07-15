@@ -47,6 +47,7 @@ import java.util.*;
 		@JsonSubTypes.Type(value = PointSeries.class, name = ".PointSeries"),
 		@JsonSubTypes.Type(value = RangeSeries.class, name = ".RangeSeries"),
 		@JsonSubTypes.Type(value = SimpleSeries.class, name = ".SimpleSeries"),
+		@JsonSubTypes.Type(value = ArraySeries.class, name = ".ArraySeries"),
 })
 @NoArgsConstructor
 public abstract class Series<D> implements Serializable {
