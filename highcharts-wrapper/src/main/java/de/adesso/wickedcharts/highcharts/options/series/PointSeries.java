@@ -16,7 +16,10 @@ package de.adesso.wickedcharts.highcharts.options.series;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
+import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,6 +34,10 @@ import java.util.List;
 public class PointSeries extends Series<Point> {
 
 	private static final long serialVersionUID = 1L;
+
+	private Number fillOpacity;
+
+	private ColorReference lineColor;
 
 	/**
 	 * Adds a point with only a number.
@@ -91,6 +98,31 @@ public class PointSeries extends Series<Point> {
 		for (Number number : data) {
 			addPoint(new Point(number));
 		}
+		return this;
+	}
+
+	public Number getFillOpacity() {
+		return this.fillOpacity;
+	}
+
+	public ColorReference getLineColor() {
+		return this.lineColor;
+	}
+
+	public PointSeries setFillOpacity(final Number fillOpacity) {
+		this.fillOpacity = fillOpacity;
+		return this;
+	}
+
+	@JsonIgnore
+	public PointSeries setLineColor(final Color lineColor) {
+		this.lineColor = new SimpleColor(lineColor);
+		return this;
+	}
+
+	@JsonProperty
+	public PointSeries setLineColor(final ColorReference lineColor) {
+		this.lineColor = lineColor;
 		return this;
 	}
 

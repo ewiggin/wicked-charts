@@ -86,6 +86,8 @@ public abstract class Series<D> implements Serializable {
 
 	private Integer borderWidth;
 
+	private Number lineWidth;
+
 	private Center center;
 
 	private PixelOrPercent innerSize;
@@ -169,6 +171,8 @@ public abstract class Series<D> implements Serializable {
 	public ColorReference getBorderColor() { return this.borderColor; }
 
 	public Integer getBorderWidth() { return this.borderWidth; }
+
+	public Number getLineWidth() { return this.lineWidth; }
 
 	public List<D> getData() {
 		return this.data;
@@ -279,6 +283,11 @@ public abstract class Series<D> implements Serializable {
 
 	public Series<D> setBorderWidth(final Integer borderWidth) {
 		this.borderWidth = borderWidth;
+		return this;
+	}
+
+	public Series<D> setLineWidth(final Number lineWidth) {
+		this.lineWidth = lineWidth;
 		return this;
 	}
 

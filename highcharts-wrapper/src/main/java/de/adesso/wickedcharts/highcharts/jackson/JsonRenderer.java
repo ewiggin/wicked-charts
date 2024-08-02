@@ -94,6 +94,7 @@ public class JsonRenderer {
         this.jacksonModule.addDeserializer(CssStyle.class, new CssStyleDeserializer());
         this.jacksonModule.addDeserializer(SeriesType.class, new SeriesTypeEnumDeserializer());
         this.jacksonModule.addDeserializer(LegendLayout.class, new LegendLayoutEnumDeserializer());
+        this.jacksonModule.addDeserializer(Stacking.class, new StackingEnumDeserializer());
         this.jacksonModule.addDeserializer(PointPlacementProperty.class, new PointPlacementPropertyDeserializer());
 
         ObjectMapper mapper = createDefaultObjectMapper();
